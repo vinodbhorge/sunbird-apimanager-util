@@ -53,6 +53,13 @@ dependencies {
   compile("io.dropwizard.metrics:metrics-annotation")
   compile("org.apache.commons:commons-collections4:4.4")
 
+  compile('ch.qos.logback:logback-classic:1.2.12')
+  compile('ch.qos.logback:logback-core:1.2.12')
+
+  compile("com.fasterxml.jackson.core:jackson-databind:2.9.10.8")
+  compile("com.fasterxml.jackson.core:jackson-core:2.9.10")
+  compile("com.fasterxml.jackson.core:jackson-annotations:2.9.10")
+
   testCompile('io.rest-assured:rest-assured:3.0.2')
   testCompile('org.springframework.boot:spring-boot-starter-test')
   testCompile('com.github.tomakehurst:wiremock:2.5.1')

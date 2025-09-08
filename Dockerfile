@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM eclipse-temurin:8-jre-jammy
 
 ENV APP_HOME=/opt/app
 RUN mkdir -p $APP_HOME
@@ -8,4 +8,4 @@ COPY build/libs/adminutil-*.jar adminutil.jar
 
 EXPOSE 4000
 
-ENTRYPOINT /usr/bin/java ${JAVA_OPTS} -jar adminutil.jar
+ENTRYPOINT java $JAVA_OPTS -jar adminutil.jar

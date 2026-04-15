@@ -1,11 +1,14 @@
-FROM openjdk:8-jre-alpine
+FROM eclipse-temurin:8-jre-jammy
 
 ENV APP_HOME=/opt/app
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 
+COPY docker-entrypoint.sh .
+RUN chmod +x docker-entrypoint.sh
+
 COPY build/libs/adminutil-*.jar adminutil.jar
 
 EXPOSE 4000
 
-ENTRYPOINT /usr/bin/java ${JAVA_OPTS} -jar adminutil.jar
+ENTRYPOINT ["./docker-entrypoint.sh"]

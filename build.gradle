@@ -58,7 +58,7 @@ dependencies {
   implementation("com.fasterxml.jackson.core:jackson-annotations:2.15.0")
   implementation("org.yaml:snakeyaml:1.32")
 
-  testImplementation('io.rest-assured:rest-assured:3.0.2')
+  testImplementation('io.rest-assured:rest-assured:6.0.0')
   testImplementation('org.springframework.boot:spring-boot-starter-test')
   testImplementation('com.github.tomakehurst:wiremock:2.5.1')
 }

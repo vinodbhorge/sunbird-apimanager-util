@@ -18,8 +18,13 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '8'
           distribution: 'temurin'
+
+      - name: Build with Gradle
+        run: |
+          chmod +x ./gradlew
+          ./gradlew build --info -x test
 
       - name: Submit Gradle Dependencies
         uses: gradle/actions/dependency-submission@v4

@@ -66,16 +66,20 @@ dependencies {
   testCompile('com.github.tomakehurst:wiremock:2.5.1')
 }
 
-task('printVersion') << {
-  def json = JsonOutput.toJson([
-    name: project.name,
-    version: project.version,
-    org: project.ext.org,
-    hubuser: project.ext.hubuser
-  ])
-  println json
+task('printVersion') {
+  doLast {
+    def json = JsonOutput.toJson([
+      name: project.name,
+      version: project.version,
+      org: project.ext.org,
+      hubuser: project.ext.hubuser
+    ])
+    println json
+  }
 }
 
-task showMeCache << {
-  configurations.compile.each { println it }
+task showMeCache {
+  doLast {
+    configurations.compile.each { println it }
+  }
 }
